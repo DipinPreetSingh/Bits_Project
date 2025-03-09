@@ -33,6 +33,44 @@ const data = {
         href: '/page/help',
       },
     ],
+
+    carousels: [
+      {
+        title: 'Ricoh Bestselling Printers',
+        buttonCaption: 'Shop Now',
+        image: '/images/Banner1.jpg',
+        url: '/search?category=Ricoh',
+        isPublished: true,
+      },
+      {
+        title: 'Sharp Bestselling Printers',
+        buttonCaption: 'Shop Now',
+        image: '/images/Banner3.jpg',
+        url: '/search?category=Sharp',
+        isPublished: true,
+      },
+      {
+        title: 'Brother Bestselling Printers',
+        buttonCaption: 'See More',
+        image: '/images/Banner4.jpg',
+        url: '/search?category=Brother',
+        isPublished: true,
+      },
+      {
+        title: 'HP Bestselling Printers',
+        buttonCaption: 'See More',
+        image: '/images/Banner5.jpg',
+        url: '/search?category=HP',
+        isPublished: true,
+      },
+      {
+        title: 'Original Spares',
+        buttonCaption: 'See More',
+        image: '/images/Banner2.jpg',
+        url: '/search?category=OEM_Spares',
+        isPublished: true,
+      },
+    ],
   }
   
   export default data
