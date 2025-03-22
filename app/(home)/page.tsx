@@ -51,7 +51,7 @@ export default async function HomePage() {
         items: bestSellers,
         link: {
           text: 'View All',
-          href: '/search?tag=new-arrival',
+          href: '/search?tag=best-seller',
         },
       },
       {
@@ -63,7 +63,8 @@ export default async function HomePage() {
         },
       },
     ]
-    const todaysDeals = await getProductsByTag({ tag: 'todays-deal' })  
+    const todaysDeals = await getProductsByTag({ tag: 'todays-deal' })
+    const bestSellingProducts = await getProductsByTag({ tag: 'best-seller' })  
     return (
       <>
         <HomeCarousel items={data.carousels} />
@@ -72,6 +73,11 @@ export default async function HomePage() {
         <Card className='w-full rounded-none'>
           <CardContent className='p-4 items-center gap-3'>
             <ProductSlider title={"Today's Deals"} products={todaysDeals} />
+          </CardContent>
+        </Card>
+        <Card className='w-full rounded-none'>
+          <CardContent className='p-4 items-center gap-3'>
+            <ProductSlider title='Best Selling Products'products={bestSellingProducts} hideDetails />
           </CardContent>
         </Card>
       </div>
