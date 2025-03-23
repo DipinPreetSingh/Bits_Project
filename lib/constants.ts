@@ -6,3 +6,6 @@ export const APP_DESCRIPTION =
   process.env.NEXT_PUBLIC_APP_DESCRIPTION ||
   'A modern office and business software solution for small businesses and professionals'
 export const PAGE_SIZE = Number(process.env.PAGE_SIZE || 9)
+export const FREE_SHIPPING_MIN_PRICE = Number(
+  process.env.FREE_SHIPPING_MIN_PRICE || 35
+)
