@@ -9,6 +9,14 @@ const Price = (field: string) =>
       (value) => /^\d+(\.\d{2})?$/.test(formatNumberWithDecimal(value)),
       `${field} must have exactly two decimal places (e.g., 49.99)`
     )
+// USER
+const UserName = z
+  .string()
+  .min(2, { message: 'Username must be at least 2 characters' })
+  .max(50, { message: 'Username must be at most 30 characters' })
+const Email = z.string().min(1, 'Email is required').email('Email is invalid')
+const Password = z.string().min(3, 'Password must be at least 3 characters')
+const UserRole = z.string().min(1, 'role is required')
 export const ProductInputSchema = z.object({
   name: z.string().min(3, 'Name must be at least 3 characters'),
   slug: z.string().min(3, 'Slug must be at least 3 characters'),
@@ -76,4 +84,28 @@ export const CartSchema = z.object({
   paymentMethod: z.optional(z.string()),
   deliveryDateIndex: z.optional(z.number()),
   expectedDeliveryDate: z.optional(z.date()),
+})
+
+export const UserInputSchema = z.object({
+  name: UserName,
+  email: Email,
+  image: z.string().optional(),
+  emailVerified: z.boolean(),
+  role: UserRole,
+  password: Password,
+  paymentMethod: z.string().min(1, 'Payment method is required'),
+  address: z.object({
+    fullName: z.string().min(1, 'Full name is required'),
+    street: z.string().min(1, 'Street is required'),
+    city: z.string().min(1, 'City is required'),
+    province: z.string().min(1, 'Province is required'),
+    postalCode: z.string().min(1, 'Postal code is required'),
+    country: z.string().min(1, 'Country is required'),
+    phone: z.string().min(1, 'Phone number is required'),
+  }),
+})
+
+export const UserSignInSchema = z.object({
+  email: Email,
+  password: Password,
 })
