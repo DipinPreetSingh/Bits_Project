@@ -50,3 +50,11 @@ export type IReviewDetails = IReviewInput & {
     name: string
   }
 }
+export type IOrderList = IOrderInput & {
+  _id: string
+  user: {
+    name: string
+    email: string
+  }
+  createdAt: Date
+}
