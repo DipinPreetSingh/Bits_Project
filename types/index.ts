@@ -8,7 +8,8 @@ import {
   UserSignUpSchema,
   UserSignInSchema,
   OrderInputSchema,
-  ReviewInputSchema
+  ReviewInputSchema,
+  UserNameSchema
 } from '@/lib/validator'
 
 export type IProductInput = z.infer<typeof ProductInputSchema>
@@ -41,6 +42,7 @@ export type Cart = z.infer<typeof CartSchema>
 export type ShippingAddress = z.infer<typeof ShippingAddressSchema>
 export type IOrderInput = z.infer<typeof OrderInputSchema>
 export type IReviewInput = z.infer<typeof ReviewInputSchema>
+export type IUserName = z.infer<typeof UserNameSchema>
 export type IReviewDetails = IReviewInput & {
   _id: string
   createdAt: string
