@@ -265,6 +265,7 @@ const ProductForm = ({
                   <CardContent className='space-y-2 mt-2 min-h-48'>
                     <div className='flex justify-start items-center space-x-2'>
                       {images.map((image: string) => (
+                        <Card key={image} className='relative '>
                         <Image
                           key={image}
                           src={image}
@@ -273,6 +274,20 @@ const ProductForm = ({
                           width={100}
                           height={100}
                         />
+                        <Button
+                            variant={'destructive'}
+                            className='absolute top-1 right-1'
+                            type='button'
+                            size='icon'
+                            onClick={() => {
+                              form.setValue(
+                                'images',
+                                images.filter((img) => img !== image)
+                              )
+                            }}
+                          >
+                          </Button>
+                          </Card>
                       ))}
                       <FormControl>
                         <UploadButton
