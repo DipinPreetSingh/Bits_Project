@@ -56,3 +56,4 @@ export const APP_COPYRIGHT =
       freeShippingMinPrice: 35,
     },
   ]
+  export const USER_ROLES = ['Admin', 'User']
